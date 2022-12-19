@@ -9,6 +9,8 @@ const refs = {
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
 };
+refs.start.setAttribute('disabled', true);
+
 let targetTime = null;
 let intervalId = null;
 
@@ -35,6 +37,7 @@ const timer = {
     const intervalId = setInterval(() => {
       const deltaTime = targetTime.getTime() - Date.now();
       const timeComponent = convertMs(deltaTime);
+
       if (deltaTime <= 0) {
         clearInterval(intervalId);
         refs.seconds.style.color = 'inherit';
@@ -56,8 +59,6 @@ const timer = {
     }, 1000);
   },
 };
-
-refs.start.setAttribute('disabled', true);
 
 flatpickr('input#datetime-picker', options);
 

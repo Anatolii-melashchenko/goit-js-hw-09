@@ -8,6 +8,7 @@ const refs = {
   hours: document.querySelector('[data-hours]'),
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
+  input: document.querySelector('input#datetime-picker'),
 };
 refs.start.setAttribute('disabled', true);
 
@@ -28,7 +29,8 @@ const options = {
     targetTime = selectedDates[0];
 
     refs.start.addEventListener('click', onStartTime);
-    refs.start.removeAttribute('disabled');
+    // refs.start.removeAttribute('disabled');
+    refs.start.disabled = false;
   },
 };
 
@@ -60,11 +62,13 @@ const timer = {
   },
 };
 
-flatpickr('input#datetime-picker', options);
+flatpickr(refs.input, options);
 
 function onStartTime() {
   timer.start();
-  refs.start.setAttribute('disabled', true);
+  // refs.start.setAttribute('disabled', true);
+  refs.start.disabled = true;
+  refs.input.disabled = true;
 }
 
 function addLeadingZero(value) {

@@ -4,7 +4,6 @@ function getRandomHexColor() {
 const refs = {
   start: document.querySelector('[data-start]'),
   stop: document.querySelector('[data-stop]'),
-  // body: document.querySelector('body'),
 };
 const DELAY = 1000;
 let timerId = null;
@@ -19,8 +18,6 @@ function onChangeColorStart() {
 
   timerId = setInterval(() => {
     let randomColor = getRandomHexColor();
-    // refs.body.style.backgroundColor = randomColor;
-    // refs.start.setAttribute('disabled', true);
 
     document.body.style.backgroundColor = randomColor;
   }, DELAY);
@@ -29,7 +26,6 @@ function onChangeColorStart() {
 function onChangeColorStop() {
   clearInterval(timerId);
 
-  // refs.start.removeAttribute('disabled');
   refs.start.disabled = false;
   refs.stop.disabled = true;
 }

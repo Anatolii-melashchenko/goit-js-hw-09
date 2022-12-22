@@ -29,7 +29,7 @@ const options = {
     targetTime = selectedDates[0];
 
     refs.start.addEventListener('click', onStartTime);
-    // refs.start.removeAttribute('disabled');
+
     refs.start.disabled = false;
   },
 };
@@ -67,7 +67,7 @@ flatpickr(refs.input, options);
 
 function onStartTime() {
   timer.start();
-  // refs.start.setAttribute('disabled', true);
+
   refs.start.disabled = true;
   refs.input.disabled = true;
 }

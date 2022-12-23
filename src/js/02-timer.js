@@ -46,7 +46,7 @@ const timer = {
         refs.minutes.style.color = 'inherit';
         refs.hours.style.color = 'inherit';
         refs.days.style.color = 'inherit';
-        refs.input.disabled = false;
+        refs.input.disabled = true;
 
         return;
       }
